@@ -1,0 +1,15 @@
+{
+  "observation_id": "string",
+  "observation_type": "ice_thickness",
+  "location": {
+    "place_name": "string",
+    "latitude": "number",
+    "longitude": "number"
+  },
+  "timestamp": "string (ISO 8601 format)",
+  "value": {
+    "unit": "cm",
+    "measurement": "number"
+  },
+  "observer_notes": "string"
+}
