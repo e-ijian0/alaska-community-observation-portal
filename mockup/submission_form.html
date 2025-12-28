@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Observation Submission Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        .field-row { display: flex; gap: 10px; }
+        .field-row > div { flex: 1; }
+        button { background-color: #4CAF50; color: white; padding: 12px 20px; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Community Observation Submission Form</h1>
+        <p>Submit observations about ice thickness, water levels, or other environmental conditions.</p>
+        <form id="observation-form">
+            <div class="form-group">
+                <label for="observation_type">Observation Type</label>
+                <select id="observation_type" name="observation_type" required>
+                    <option value="">Select type</option>
+                    <option value="ice_thickness">Ice Thickness</option>
+                    <option value="water_level">Water Level</option>
+                    <option value="flood_extent">Flood Extent</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="place_name">Place Name</label>
+                <input type="text" id="place_name" name="place_name" placeholder="e.g., Kuskokwim River near Bethel" required>
+            </div>
+
+            <div class="field-row">
+                <div class="form-group">
+                    <label for="latitude">Latitude</label>
+                    <input type="number" step="any" id="latitude" name="latitude" placeholder="e.g., 60.792" required>
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Longitude</label>
+                    <input type="number" step="any" id="longitude" name="longitude" placeholder="e.g., -161.755" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="timestamp">Date and Time (ISO 8601)</label>
+                <input type="datetime-local" id="timestamp" name="timestamp" required>
+            </div>
+
+            <div class="field-row">
+                <div class="form-group">
+                    <label for="value">Measurement Value</label>
+                    <input type="number" step="any" id="value" name="value" placeholder="e.g., 45" required>
+                </div>
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <select id="unit" name="unit" required>
+                        <option value="cm">cm (centimeters)</option>
+                        <option value="m">m (meters)</option>
+                        <option value="ft">ft (feet)</option>
+                        <option value="in">in (inches)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="safety_status">Safety Status</label>
+                <select id="safety_status" name="safety_status">
+                    <option value="">Not specified</option>
+                    <option value="safe">Safe</option>
+                    <option value="caution">Caution</option>
+                    <option value="unsafe">Unsafe</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="observer_notes">Observer Notes</label>
+                <textarea id="observer_notes" name="observer_notes" rows="4" placeholder="Additional details, context, or safety concerns..."></textarea>
+            </div>
+
+            <button type="submit">Submit Observation</button>
+        </form>
+        <p><em>Note: This is a mockup form for demonstration. Actual submission functionality will be implemented later.</em></p>
+    </div>
+    <script>
+        document.getElementById('observation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Observation submitted (mockup). In a real implementation, data would be sent to a server.');
+        });
+    </script>
+</body>
+</html>
