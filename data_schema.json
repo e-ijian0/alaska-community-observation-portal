@@ -11,5 +11,6 @@
     "unit": "cm",
     "measurement": "number"
   },
-  "observer_notes": "string"
+  "observer_notes": "string",
+  "safety_status": "string"
 }
